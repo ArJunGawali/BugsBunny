@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <link rel="stylesheet" type="text/css" href="css/style_login.css"> 
+</head>
+<body>
+<style>
+h2{
+
+  background-color:white;
+}
+</style>
+
+<form action="register.php" method="POST"  target='_blank'>
+
+    <div id="id02" class="form" align = "center">
+     <h2 > Name &ensp;&ensp;&ensp;&ensp;&ensp; <input type="text" placeholder="Enter name" name="fname" required></h2> 
+     <h2 >Username &ensp; <input type="text" placeholder="Enter Username" name="uname" required></h2>
+     <h2 >Password &ensp;<input type="password" placeholder="Enter Password" name="pass" required><br></h2>
+     <h2 >email &ensp;&ensp;&ensp;&ensp;&ensp;<input type="text" placeholder="Enter email id" name="email" required><br></h2>
+     <h2 >mobile no. <input type="text" placeholder="Enter mobile no." name="mob" required><br></h2>
+     
+     
+     &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     <select name='type'>
+      <option  value='shop_owner'>shop_owner</option>
+      <option  value='pet_owner'>pet_owner</option>
+      <option  value= "doctor">doctor</option>
+      </select> <br><br>
+      <button type="submit"  action= "register.php" >Register</button>
+    </div>
+    </form>
+
+
+</body>
+
+</html>
