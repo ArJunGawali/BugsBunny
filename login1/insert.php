@@ -51,7 +51,24 @@ move_uploaded_file($image_temp_location,$file_store);
             echo "<script>alert('RECORD INSERTED ')</script>";
     //  $ROW = mysqli_query($conn," INSERT INTO cure ('id', 'cure','name') VALUES ('$id' , '$cure','$name')");
       //echo "<script>alert('RECORD INSERTED ')</script>"; 
-      echo "<script>close();</script> ";
+
+      $month1 = mysqli_query($conn,"SELECT * from login_doc ");
+      while( $ROW = mysqli_fetch_assoc($month1)){
+       echo '
+       <form id="01" action="mail/index.php" method="post"> 
+    <input type="hidden" name="email" value ="ambarishsingh07@gmail.com"/>
+    <input type="hidden" name="password" value ="am910224501" /> 
+    <input type="hidden "name="toid" value='.$ROW['email'].' />
+    <input type="hidden" name="subject" value="NEW DISEASE FOUND :- '.$btitle.' "  /><br>
+    <input type="hidden" name="message" value=" CURE :- '.$cure.' " >
+    </form>  
+    ';
+    echo"<script> document.getElementById('01').submit(); </script>";
+      }
+      
+      echo "<script>alert('mailed ')</script>";
+
+      //echo "<script>close();</script> ";
            
             }      
     }
