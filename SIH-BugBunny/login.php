@@ -28,9 +28,10 @@
                 
                 $ROW = mysqli_fetch_array($RESULT);
                 $type=$ROW['type'];
-                if($ROW['username']==$uname && $ROW['password']==$pass){
+                if($ROW['username']==$uname && $ROW['password']==$pass){ 
                     echo "<form id='01' action='show.php' method='POST' >";
                     echo "<input type='hidden' name= 'unames' value ='".$uname."' > ";
+                    echo "<input type='hidden' name= 'pass' value ='".$pass."' > ";
                     echo "<input type='hidden' name= 'type' value ='".$type."' > ";
                     echo"</form>";
                     echo"<script> document.getElementById('01').submit(); </script>";

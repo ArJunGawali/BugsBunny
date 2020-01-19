@@ -67,10 +67,10 @@ input[type=text]:focus {
 
 <body> 
 <div style="position : fixed; padding: 5px 0 0 5px; height: 140px; width: 150px;">
-<form id="idid">
+<form id="idid" action="d_search.php" >
   <input type="text"  name="search" placeholder=" Disease Search..">
 </form>
-<form id="idid">
+<form id="idid" action="s_search.php" >
   <input type="text"  name="search" placeholder=" Symptom Search..">
 </form>
 </div>
@@ -134,13 +134,11 @@ img{
   height:400px;
   word-wrap: break-word;
   font-size:auto;
-  border-style: solid;
   float:right;
   background-color:white; 
 }
 #chat{
   float:right;  
-  border-style: double;
   width:85px;
   height:35px;
   background-color:white;
@@ -150,7 +148,6 @@ img{
   background-color:white;
   margin-left:0px;
   margin-right:0px;
-  border-style: double;
 }
 h4{
   display:block;
@@ -246,12 +243,25 @@ input[type=text] {
 <body> 
 
 <div style="position : fixed; padding: 5px 0 0 5px; height: 140px; width: 150px;">
-<form id="idid">
+<form id="idid" action="d_search.php" >
   <input type="text"  name="search" placeholder=" Disease Search..">
 </form>
-<form id="idid">
+<form id="idid" action="s_search.php" >
   <input type="text"  name="search" placeholder=" Symptom Search..">
 </form>
+
+
+<form id="idid">
+<?php
+
+session_start();
+$_SESSION['user_name']=$uname;
+session_write_close();
+?>
+<a href='chat/indexes.php' target='_blank' > <img src="images/s.png" style="width:100px; height:100px; " >  </a>
+
+</form>
+
 </div>
 </body>
 </html>
